@@ -1,0 +1,26 @@
+@charset "utf-8";
+* {
+	margin:0;
+	padding:0;
+}
+
+#container {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+	width:600px;
+}
+
+#header{
+	border-top: 1px solid #a9a9a9;
+	border-bottom: 1px solid #a9a9a9;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+.menu{
+	display:inline-block;
+	_display:inline;
+	color: #000000;
+	padding:10px 20px
+}
