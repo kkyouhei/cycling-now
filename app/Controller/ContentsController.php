@@ -3,15 +3,11 @@
 
 		public $name = 'Contents';
 		public $uses = array('Upload');
+		public $components = array('Twitter');
 
 		public function index(){
-
-			// 最新の投稿 Uploads.path Uploads.comment Uploads.type
-			$uploadNewest = $this->Upload->getUploadNewest();
-			$this->set('uploadNewest', $uploadNewest);
-
-			// 過去6件の投稿
-			$uploadImages = $this->Upload->getUploadForFooter();
-			$this->set('uploadImages', $uploadImages);
+			$timeLine = $this->Twitter->getTimeLine();
+			foreach($timeLine as $twitte){
+			}	
 		}
 	}

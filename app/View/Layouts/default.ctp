@@ -25,7 +25,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<div id="header">
 			<div id="header-menu">
 				<div class="menu">
-					<a href="http://192.168.11.8/cycling-now">しゃしん</a>	
+					<a href="http://192.168.11.8/cycling-now">つぶやき</a>	
+				</div>
+				<div class="menu">
+					<a href="http://192.168.11.8/cycling-now/gallery">しゃしん</a>	
 				</div>
 				<div class="menu">
 					<a href="http://192.168.11.8/cycling-now/map">いまここ</a>	
