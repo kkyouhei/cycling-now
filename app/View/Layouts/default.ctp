@@ -20,7 +20,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<h1>
-			タイトル
+			日本列島縦断中
 		</h1>
 		<div id="header">
 			<div id="header-menu">
