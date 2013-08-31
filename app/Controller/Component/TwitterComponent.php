@@ -35,71 +35,57 @@ class TwitterComponent extends Component implements TwitterInfo{
 		return json_decode($this->twitterObj->OAuthRequest('http://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array()));
 	}
 
-	public function getTimeLineTweet(){
-		$tweets = array();
-		$timeLine = $this->getTimeLine();
-		$imgUrl = "";
-		foreach($timeLine as $tweetInfo){
-			$tweetTime = $tweetInfo->created_at;
-			$tweet = $tweetInfo->text;
-
-			$isImg = strstr($tweet, '［写真］');
-			if($isImg){
-				$shortUrl = $tweetInfo->entities->urls[0]->display_url;
-				$imgUrl = $this->getImgUrl($shortUrl);
-			}
-
-			array_push($tweets, array(
-				'time'		=>	 date('Y-m-d H:i:s', strtotime((string) $tweetTime))	,
-				'imgUrl'	=>	$imgUrl															,
-				'tweet'		=>	$tweet
-			));
-
-			$tweetTime = "";
-			$imgUrl = "";
-			$tweet = "";
-		}
-
-		return $tweets;
-	}
-
+	// get images url in timeline 
 	public function getTimeLineImg(){
-		// TimeLine of in Images
-		$imgUrl = array();
+		// timeLine of in Images
+		$imgsUrl = array();
 		$timeLine = $this->getTimeLine();
 		foreach($timeLine as $tweetInfo){
 			$tweet = $tweetInfo->text;
 			// isImg ImageTweet = startIdx TextTweet = FALSE 
-			$isImg = strstr($tweet, '［写真］');
-			if($isImg){
-				$shortUrl = $tweetInfo->entities->urls[0]->display_url;
+			$imgUrl = '';
+			if(	isset($tweetInfo->entities->media) && isset($tweetInfo->entities->media[0]->media_url) &&
+				!empty($tweetInfo->entities->media[0]->media_url) && !empty($tweetInfo->entities->media[0]->media_url)){
 
-				array_push($imgUrl, $this->getImgUrl($shortUrl));
+				$imgUrl = $tweetInfo->entities->media[0]->media_url;
+				array_push($imgsUrl, $imgUrl);
 			}
+
 		}
 
-		return $imgUrl;
+		return $imgsUrl;
 	}
 
 	// get location
 	public function getTimeLineLocation(){
-		// TimeLine of in location 
-		$locations = array();
-		$locations = "";
+		// timeLine of in location 
 		$timeLine = $this->getTimeLine();
-		foreach($timeLine as $tweetInfo){
-			$location = $tweetInfo->location;
-			// isImg ImageTweet = startIdx TextTweet = FALSE 
-			array_push($locations, $location);
+		$locations = array();
+
+		$lat = '';
+		$lng = '';
+		if(isset($timeLine[0]->geo)){
+			$lat = $timeLine[0]->geo->coordinates[0];
+			$lng = $timeLine[0]->geo->coordinates[1];
 		}
 
-		return $locations;
-	}
+		$imgUrl = '';
+		if(isset($timeLine[0]->entities->media)){
+			$imgUrl = $timeLine[0]->entities->media[0]->media_url;
+		}
+		$tweet = $timeLine[0]->text;
+		
+		array_push(
+			$locations	,
+			array(
+				 	'lat'		=>	$lat
+				,	'lng'		=>	$lng
+				,	'imgUrl'	=>	$imgUrl
+				,	'content'	=>	$tweet			
+			)
+		);
 
-	// shortUrl convert to imgUrl
-	public function getImgUrl($shortUrl){
-		$shortUrl = str_replace('p.twipple.jp/', "", $shortUrl);
-		return 'http://p.twpl.jp/show/orig/'. $shortUrl;
+		return $locations;
 	}
 
 }
