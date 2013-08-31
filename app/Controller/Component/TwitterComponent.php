@@ -81,6 +81,21 @@ class TwitterComponent extends Component implements TwitterInfo{
 		return $imgUrl;
 	}
 
+	// get location
+	public function getTimeLineLocation(){
+		// TimeLine of in location 
+		$locations = array();
+		$locations = "";
+		$timeLine = $this->getTimeLine();
+		foreach($timeLine as $tweetInfo){
+			$location = $tweetInfo->location;
+			// isImg ImageTweet = startIdx TextTweet = FALSE 
+			array_push($locations, $location);
+		}
+
+		return $locations;
+	}
+
 	// shortUrl convert to imgUrl
 	public function getImgUrl($shortUrl){
 		$shortUrl = str_replace('p.twipple.jp/', "", $shortUrl);

@@ -2,11 +2,20 @@
 class ContentsController extends AppController{
 
 	public $name = 'Contents';
-	public $uses = array('Upload');
 	public $components = array('Twitter');
 
 	public function index(){
-		$tweets = $this->Twitter->getTimeLineTweet();
-		$this->set('tweets', $tweets);
+		
+		
+		echo '<script type="text/javascript">';
+		echo 'var title = \'HelloMap\'';
+		echo '</script>';
+
+		$arr = array('sample' => 'HelloSample');
+		echo '<script type="text/javascript">';
+		echo json_encode($arr);
+		echo '</script>';
+
 	}
+
 }

@@ -1,4 +1,19 @@
-#map{
-	width:600px;
-	height:500px;
+@charset "utf-8";
+#main{
+	margin:0 auto;
+}
+
+.tweet{
+	margin-left:20px;
+	margin-bottom:10px;
+}
+
+.tweet-text{
+	margin-left:20px;
+}
+
+.tweet-img{
+	margin-left:20px;
+	width:300px;
+	height:210px;
 }

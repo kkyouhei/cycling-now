@@ -1,17 +1,11 @@
 <?php
-	class MapController extends AppController{
+class MapController extends AppController{
 
-		public $name = 'Map';
+	public $name = 'Map';
+	public $components = array('Twitter');
 
-		public function index(){
-				echo '<script type="text/javascript">';
-				echo 'var title = \'HelloMap\'';
-				echo '</script>';
-
-				$arr = array('sample' => 'HelloSample');
-				echo '<script type="text/javascript">';
-				echo json_encode($arr);
-				echo '</script>';
-
-		}
+	public function index(){
+		$tweets = $this->Twitter->getTimeLineTweet();
+		$this->set('tweets', $tweets);
 	}
+}

@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<script type="text/javascript"
-		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCN4-dyVGa4ji1ZBsmKD1o5eZRJDcu5Wvw&sensor=false">
-</script>	
-<?php
-	echo $this->Html->charset();
-		echo $this->Html->script('jquery-1.10.2.min.js', array('inline' => true));
-		echo $this->Html->script('map', array('inline' => true));
-		echo $this->Html->css('map');
-?>
-
-<body onload="initialize()">
-	<div id="map"</div>
-</body>
+<div id="main">
+	<?php foreach($tweets as $tweet){ ?>
+		<div class="tweet">
+			<div class="tweet-head">
+				<p>
+					<?php echo $tweet['time']; ?>
+				</p>
+			</div>
+			<div class="tweet-text">
+				<p>
+					<?php echo $tweet['tweet']; ?>
+				</p>
+			</div>
+			<?php if(!empty($tweet['imgUrl'])){
+				echo $this->Html->image(
+					$tweet['imgUrl']	,
+					array(
+						'class'	=>	'tweet-img'
+					)
+				);
+			} ?>
+		</div>
+	<?php } ?>
+</div>
