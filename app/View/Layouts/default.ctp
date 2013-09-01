@@ -27,7 +27,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<div id="header-menu">
 					<a href="http://192.168.11.8/cycling-now" class="menu">いまここ</a>	
 					<a href="http://192.168.11.8/cycling-now/gallery" class="menu">しゃしん</a>	
-					<a href="http://192.168.11.8/cycling-now/tweet" class="menu">つぶやき</a>	
 				</div>
 			</div>
 			<?php echo $content_for_layout; ?>
