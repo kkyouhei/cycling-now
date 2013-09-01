@@ -18,13 +18,17 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 <body>
-	<div id="wrapper">
-		<div id="container">
-			<h1>
-				日本半分縦断中
-			</h1>
-			<?php echo $content_for_layout; ?>
+	<div id="container">
+		<h1>
+			日本半分縦断中
+		</h1>
+		<div id="sns-button">
+			<?php echo $this->element('facebook_good'); ?>
+			<?php echo $this->element('twitter_tweet'); ?>
 		</div>
+		<?php echo $content_for_layout; ?>
+	</div>
+	<div id="footer">
 	</div>
 </body>
 </html>
