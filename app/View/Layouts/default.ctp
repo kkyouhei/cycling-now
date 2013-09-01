@@ -1,5 +1,5 @@
 <?php
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', '日本縦断 冒険');
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,6 +8,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<title>
 		<?php echo $cakeDescription ?>:
 	</title>
+	<meta name="description" content="ママチャリで日本を約半分縦断しています。道中撮影したものなど冒険の記録をツイッターと連携してGoogleMapに更新しています。">
+	<meta name="keywords" content="日本縦断,冒険,ママチャリ">
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('cake.generic');
