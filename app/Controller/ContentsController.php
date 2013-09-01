@@ -6,6 +6,19 @@ class ContentsController extends AppController{
 
 	public function index(){
 		$locations = $this->Twitter->getTimeLineLocation();
+
+		// convert locations->imgUrl to imgtag
+		foreach($locations as $locKey => $locVal){
+			if(!empty($locVal['imgUrl'])){
+				$imgUrl  = '<br/>' ;
+				$imgUrl .= '<a href="' . $locVal['imgUrl'] . '"/>';
+				$imgUrl .= '<img src="' . $locVal['imgUrl'] . '" class="imgs"; />';
+				$imgUrl .= '</a>';
+				$locations[$locKey]['imgUrl'] = $imgUrl;
+			}
+
+		}
+
 		// add start end location
 		array_push($locations,
 			array(

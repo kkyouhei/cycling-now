@@ -62,28 +62,32 @@ class TwitterComponent extends Component implements TwitterInfo{
 		$timeLine = $this->getTimeLine();
 		$locations = array();
 
-		$lat = '';
-		$lng = '';
-		if(isset($timeLine[0]->geo)){
-			$lat = $timeLine[0]->geo->coordinates[0];
-			$lng = $timeLine[0]->geo->coordinates[1];
-		}
+		foreach($timeLine as $tweetInfo){
+			$lat = '';
+			$lng = '';
+			$imgUrl = '';
 
-		$imgUrl = '';
-		if(isset($timeLine[0]->entities->media)){
-			$imgUrl = $timeLine[0]->entities->media[0]->media_url;
+			// set only location tweet
+			if(isset($tweetInfo->geo)){
+				$lat = $tweetInfo->geo->coordinates[0];
+				$lng = $tweetInfo->geo->coordinates[1];
+
+				if(isset($tweetInfo->entities->media)){
+					$imgUrl = $tweetInfo->entities->media[0]->media_url;
+				}
+				$tweet = $tweetInfo->text;
+				
+				array_push(
+					$locations	,
+					array(
+							'lat'		=>	$lat
+						,	'lng'		=>	$lng
+						,	'imgUrl'	=>	$imgUrl
+						,	'content'	=>	$tweet			
+					)
+				);
+			}
 		}
-		$tweet = $timeLine[0]->text;
-		
-		array_push(
-			$locations	,
-			array(
-				 	'lat'		=>	$lat
-				,	'lng'		=>	$lng
-				,	'imgUrl'	=>	$imgUrl
-				,	'content'	=>	$tweet			
-			)
-		);
 
 		return $locations;
 	}
