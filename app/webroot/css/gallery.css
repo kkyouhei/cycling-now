@@ -1,0 +1,20 @@
+@charset "utf-8";
+#imgs{
+	width:1000px;
+	height:500px;
+}
+
+#img-list{
+	list-style:none;
+	clear:both;
+	margin-top:30px;
+	margin-left:50px;
+	margin-right:auto;
+}
+
+.sub-image{
+	width:100px;
+	height:75px;
+	padding-right:10px;
+	float:left;
+}
