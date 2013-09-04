@@ -1,7 +1,14 @@
+#marker-explanation{
+	margin-top:5px;
+}
+
+.marker-img{
+	width:40px;
+}
+
 #map{
 	width:1000px;
-	height:750px;
-	margin-top:30px;
+	height:650px;
 }
 
 .imgs{

@@ -12,5 +12,29 @@
 ?>
 
 <body onload="initialize()">
-	<div id="map"</div>
+	<div id="marker-explanation">
+		<p>
+			<?php 
+				echo $this->Html->image(
+					 'marker-red'
+					 , array(
+						   'class'=>'marker-img'
+						 , 'alt'=>'GoogleMapMarkerの説明'
+					 )
+				 );
+			?>
+			画像付き位置情報
+			<?php 
+				echo $this->Html->image(
+					 'marker-blue'
+					 , array(
+						   'class'=>'marker-img'
+						 , 'alt'=>'GoogleMapMarkerの説明'
+					 )
+				 );
+			?>
+			コメントのみ位置情報
+		</p>
+	</div>
+	<div id="map"></div>
 </body>

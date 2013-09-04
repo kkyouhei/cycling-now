@@ -1,7 +1,7 @@
 function initialize() {
 
 	var imgMarkerUrl = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|ff0000|000000';
-	var normalMarkerUrl = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|0000ff|000000';
+	var normalMarkerUrl = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|0080ff|000000';
 	// default googlemap informetion
 	var centerLatlng = new google.maps.LatLng(35.409984,135.810703);
 	var opts = {
