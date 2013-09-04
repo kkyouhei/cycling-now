@@ -1,6 +1,7 @@
 function initialize() {
 
-	var markerUrl = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=画|afeeee|000000';
+	var imgMarkerUrl = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|ff0000|000000';
+	var normalMarkerUrl = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|0000ff|000000';
 	// default googlemap informetion
 	var centerLatlng = new google.maps.LatLng(35.409984,135.810703);
 	var opts = {
@@ -23,24 +24,23 @@ function initialize() {
 		if(val.imgUrl){
 			val.content += val.imgUrl;
 			markerOption = {
-				map:		map ,
-				position:	new google.maps.LatLng(val.lat, val.lng) ,
-				title:		val.content ,
-				icon:		markerUrl
+				  map:		map
+				, position:	new google.maps.LatLng(val.lat, val.lng) 
+				, icon:		imgMarkerUrl
 			}
 			
 		}else{
 			markerOption = {
-				map:		map ,
-				position:	new google.maps.LatLng(val.lat, val.lng) ,
-				title:		val.content
+				  map:		map
+				, position:	new google.maps.LatLng(val.lat, val.lng) 
+				, icon:		normalMarkerUrl
 			}
 		}
 
 		// set marker option
 		var marker = new google.maps.Marker(markerOption);
 
-		// set marker event
+		// marker click event show infoWindow
 		google.maps.event.addListener(marker, "click", function(){
 			infoWindow.setContent(val.content);
 			infoWindow.open(map, marker);
