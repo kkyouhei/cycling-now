@@ -20,17 +20,22 @@ $cakeDescription = __d('cake_dev', '日本縦断 冒険');
 	?>
 </head>
 <body>
-	<div id="container">
-		<h1>
-			日本半分縦断中
-		</h1>
-		<div id="sns-button">
-			<?php echo $this->element('facebook_good'); ?>
-			<?php echo $this->element('twitter_tweet'); ?>
+	<div id="wrapper">
+		<div id="amazon-affiliate">
+			<?php echo $this->element('amazon_affiliate'); ?>
 		</div>
-		<?php echo $content_for_layout; ?>
-	</div>
-	<div id="footer">
+		<div id="container">
+			<h1>
+				日本半分縦断中
+			</h1>
+			<div id="sns-button">
+				<?php echo $this->element('facebook_good'); ?>
+				<?php echo $this->element('twitter_tweet'); ?>
+			</div>
+			<?php echo $content_for_layout; ?>
+		</div>
+		<div id="footer">
+		</div>
 	</div>
 </body>
 </html>
