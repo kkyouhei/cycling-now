@@ -34,7 +34,13 @@ $cakeDescription = __d('cake_dev', '日本縦断 冒険');
 			</div>
 			<?php echo $content_for_layout; ?>
 		</div>
-		<div id="footer">
+		<div id="sample-affiliate">
+			<?php
+				echo $this->Html->image(
+					  'ads-sample'
+					, array()
+				);
+			?>
 		</div>
 	</div>
 </body>
