@@ -6,7 +6,6 @@ class ContentsController extends AppController{
 
 	public function index(){
 		$locations = $this->Twitter->getTimeLineLocation();
-
 		// convert locations->imgUrl to imgtag
 		foreach($locations as $locKey => $locVal){
 			if(!empty($locVal['imgUrl'])){

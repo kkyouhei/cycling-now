@@ -32,7 +32,15 @@ class TwitterComponent extends Component implements TwitterInfo{
 	}	
 
 	public function getTimeLine(){
-		return json_decode($this->twitterObj->OAuthRequest('http://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array()));
+		return json_decode(
+			$this->twitterObj->OAuthRequest(
+				  'http://api.twitter.com/1.1/statuses/user_timeline.json'
+				, 'GET'
+				, array(
+					'count'	=>	'200'
+				)
+			)
+		);
 	}
 
 	// get images url in timeline 
