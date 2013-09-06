@@ -23,7 +23,7 @@
 					 )
 				 );
 			?>
-			画像付き位置情報
+			写真つき
 			<?php 
 				echo $this->Html->image(
 					 'marker-blue'
@@ -33,7 +33,7 @@
 					 )
 				 );
 			?>
-			コメントのみ位置情報
+			コメント
 		</p>
 	</div>
 	<div id="map"></div>

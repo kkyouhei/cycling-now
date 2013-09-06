@@ -20,7 +20,7 @@
 	<div id="wrapper">
 		<div id="container">
 			<h1>
-				日本半分横断中
+				日本横断中
 			</h1>
 			<div id="sns-button">
 				<?php echo $this->element('facebook_good'); ?>
