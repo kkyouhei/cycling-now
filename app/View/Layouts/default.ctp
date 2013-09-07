@@ -19,15 +19,19 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
+			<a id="site-desc" href="http://cycling-now.sakura.ne.jp/description/">What is this ?</a>
 			<h1>
+				<a href="http://cycling-now.sakura.ne.jp/">
 				<?php
 					echo $this->Html->image(
 						 'cycling-now-log'
 						 , array(
-							'id'	=>	'log-img'
+							  'id'	=>	'log-img'
+							, 'alt'	=>	'関くん家まで956km'
 						 )
 					 );
 				?>
+				</a>
 			</h1>
 			<div id="sns-button">
 				<?php echo $this->element('facebook_good'); ?>
