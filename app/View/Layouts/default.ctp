@@ -19,9 +19,18 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
+<div style="" id="test">
 			<h1>
-				日本横断中
+<?php
+	echo $this->Html->image(
+		 'cycling-now-log'
+		 , array(
+			'id'	=>	'log-img'
+		 )
+	 );
+?>
 			</h1>
+			</div>
 			<div id="sns-button">
 				<?php echo $this->element('facebook_good'); ?>
 				<?php echo $this->element('twitter_tweet'); ?>

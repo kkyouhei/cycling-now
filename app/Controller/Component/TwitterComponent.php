@@ -84,6 +84,7 @@ class TwitterComponent extends Component implements TwitterInfo{
 					$imgUrl = $tweetInfo->entities->media[0]->media_url;
 				}
 				$tweet = $tweetInfo->text;
+				$time = $tweetInfo->created_at;
 				
 				array_push(
 					$locations	,
@@ -92,6 +93,7 @@ class TwitterComponent extends Component implements TwitterInfo{
 						,	'lng'		=>	$lng
 						,	'imgUrl'	=>	$imgUrl
 						,	'content'	=>	$tweet			
+						,	'time'		=>	$time
 					)
 				);
 			}

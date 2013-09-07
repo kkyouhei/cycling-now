@@ -9,13 +9,15 @@ class ContentsController extends AppController{
 		// convert locations->imgUrl to imgtag and content add newline
 		$imgTag = '';
 		$content = '';
+		$tweetTime = '';
 		foreach($locations as $locKey => $locVal){
 			$imgTag = $this->convertImgTag($locVal['imgUrl']);
-			$content = $this->addNewLine($locVal['content']);
 			$locations[$locKey]['imgUrl'] = $imgTag;
+
+			$tweetTime = date('m月d日H時i分', strtotime((string) $locVal['time']));
+			$content = $this->addNewLine($tweetTime . ' ' . $locVal['content']);
 			$locations[$locKey]['content'] = $content;
 		}
-
 		// add start end location
 		array_push($locations,
 			array(
