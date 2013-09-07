@@ -3,7 +3,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		日本横断中
+		関くん家まで956km
 	</title>
 	<meta name="description" content="ママチャリで日本を約半分横断しています。道中撮影したものなど冒険の記録をツイッターと連携してGoogleMapに更新しています。">
 	<meta name="keywords" content="日本横断,冒険,ママチャリ">
@@ -19,18 +19,16 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
-<div style="" id="test">
 			<h1>
-<?php
-	echo $this->Html->image(
-		 'cycling-now-log'
-		 , array(
-			'id'	=>	'log-img'
-		 )
-	 );
-?>
+				<?php
+					echo $this->Html->image(
+						 'cycling-now-log'
+						 , array(
+							'id'	=>	'log-img'
+						 )
+					 );
+				?>
 			</h1>
-			</div>
 			<div id="sns-button">
 				<?php echo $this->element('facebook_good'); ?>
 				<?php echo $this->element('twitter_tweet'); ?>
